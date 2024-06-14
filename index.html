@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nice Try</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">NICE TRY</h1>
+        <p class="subtitle">Click the envelope for more experience</p>
+        <div class="envelope" onclick="toggleMusic()">
+            <div class="flap"></div>
+            <div class="body"></div>
+            <div class="paper">
+                <p>
+                    Nice Tryy yahh. Emng blom rejeki nya ajaa. kamu udah usaha maksimal koo.
+                    Pasti ada tempat yang lebih bagus nantinya ga harus unpad looh. Kali aja ditolak nya karena mungkin ada temen seangkatan yang gabener ato sebagainya.<br>
+                    Tapi yang pastiii bakal ada pengganti yang sepadan.Karna kmrn dah janji, nih aku buatin ginian biar semngat lagii. Udhan yaa sedihnya.
+                    Lofyu hehe
+                </p>
+            </div>
+        </div>
+    </div>
+    <a href="https://www.instagram.com/rizqyte_a/?utm_source=ig_web_button_share_sheet" target="_blank" class="instagram-link">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <audio id="background-music" src="zmusic back.mp3" loop></audio>
+    <script>
+        function toggleMusic() {
+            const music = document.getElementById('background-music');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
+</body>
+</html>

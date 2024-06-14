@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prata&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6ffe6; /* Warna hijau kalem */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, #a0d9a0, #8dc68d); /* Warna hijau amplop */
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.envelope:hover {
+    transform: rotateX(20deg);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, #6ebf6e, #5e9f5e); /* Warna hijau flap */
+    transform-origin: top;
+    transition: transform 0.5s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.envelope:hover .flap {
+    transform: rotateX(-180deg);
+}
+
+.body {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, #a0d9a0, #8dc68d); /* Warna hijau amplop */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: -1;
+}
+
+.paper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90%;
+    height: 80%;
+    background: #fff;
+    transform: translate(-50%, 100%);
+    transition: transform 0.5s 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.envelope:hover .paper {
+    transform: translate(-50%, 0);
+}
+
+.paper p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.5;
+    font-family: 'Prata', serif;
+}
+
+.instagram-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #E1306C;
+    text-decoration: none;
+}
+
+.instagram-link:hover {
+    color: #C13584;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .paper {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .paper p {
+        font-size: 1em;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+    }
+
+    .instagram-link {
+        font-size: 1.2em;
+    }
+}
